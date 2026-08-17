@@ -22,7 +22,9 @@ version = 0.1
 
 # (list) 应用依赖（python-for-android recipe 名）
 # 不写 numpy/openpyxl 之外的额外原生库；rapidocr 仅桌面用，安卓端用 ML Kit。
-requirements = python3==3.11.9, kivy==2.3.1, pillow, openpyxl, plyer, pyjnius
+# python3 与 hostpython3 必须版本一致，否则 p4a 报
+# "python3 should have same version as hostpython3"。显式同锁 3.11.9。
+requirements = python3==3.11.9, hostpython3==3.11.9, kivy==2.3.1, pillow, openpyxl, plyer, pyjnius
 
 # (str) 横竖屏：portrait / landscape / all
 orientation = portrait
