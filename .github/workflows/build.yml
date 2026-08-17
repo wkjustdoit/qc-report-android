@@ -29,13 +29,10 @@ jobs:
           pip install --upgrade pip
           pip install buildozer "cython==0.29.36"
 
-      - name: Cache buildozer download (.buildozer)
-        uses: actions/cache@v4
-        with:
-          path: .buildozer
-          key: buildozer-${{ hashFiles('buildozer.spec') }}
-          restore-keys: |
-            buildozer-
+      - name: Install system build dependencies (libtool for libffi autoreconf)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y autoconf automake libtool libltdl-dev build-essential
 
       - name: Build APK (debug)
         run: buildozer android debug
