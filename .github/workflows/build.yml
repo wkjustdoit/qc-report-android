@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,3 +48,12 @@ jobs:
           name: qc-report-apk
           path: bin/*.apk
           if-no-files-found: error
+
+      - name: Publish APK to Release (public downloadable asset)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag: apk-build-${{ github.run_number }}
+          name: QC Report APK (build ${{ github.run_number }})
+          files: bin/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
