@@ -52,7 +52,7 @@ jobs:
       - name: Publish APK to Release (public downloadable asset)
         uses: softprops/action-gh-release@v2
         with:
-          tag: apk-build-${{ github.run_number }}
+          tag_name: apk-build-${{ github.run_number }}
           name: QC Report APK (build ${{ github.run_number }})
           files: bin/*.apk
         env:
