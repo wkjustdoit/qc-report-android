@@ -1,0 +1,12 @@
+# 安卓版依赖（打包由 buildozer 完成，此文件仅作说明/本地桌面调试用）
+# 云端构建时真正起作用的是 buildozer.spec 里的 requirements 与 android.gradle_dependencies。
+
+# Kivy 应用框架
+kivy==2.3.1
+pillow
+openpyxl
+plyer
+pyjnius
+
+# 桌面调试时复用 OCR（安卓端用 ML Kit，不装这个）
+# rapidocr-onnxruntime

@@ -1,0 +1,32 @@
+{
+  "ocr": {
+    "provider": "local"
+  },
+  "photo_groups": [
+    {"key": "label_mark",      "label": "请上传产品标示照片",            "cell": "C51"},
+    {"key": "eve_barcode",     "label": "请上传EVE条码及条码机照片",      "cell": "D87"},
+    {"key": "lve_barcode",     "label": "请上传LVE条码及条码机照片",      "cell": "D91"},
+    {"key": "print_each_side", "label": "请上传产品印刷每一面照片",        "cell": "D107"},
+    {"key": "inner_box",       "label": "请上传内盒包装照片",            "cell": "D108"},
+    {"key": "outer_box",       "label": "请上传外箱包装照片",            "cell": "D109"}
+  ],
+  "fields": {
+    "quantity_cell": "D6",
+    "order_no_cell": "D11",
+    "date_cell": "D12",
+    "size_cell": "F26",
+    "sample_cartons_cell": "E31",
+    "sample_numbers_cell": "E32",
+    "total_cartons_cell": "E33"
+  },
+  "image": {
+    "target_size_kb": 700,
+    "quality": 90,
+    "max_dimension": 2048,
+    "auto_rotate_portrait": true,
+    "min_height_px": 110,
+    "gap_px": 6,
+    "fit_margin_px": 8,
+    "fit_safety_px": 12
+  }
+}
